@@ -33,10 +33,12 @@
                <a><a href="{{profile.html_url}}" target="blank" class="btn btn-success bt-sm">View profile on Github</a></a>
                <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-tittle">Repositories</h3>
+                    <h3 class="panel-tittle">Repos</h3>
                 </div>
                 <div class="panel-body" >
-                    <p></p>
+                    <p *ngIf="repos"> {{repos.name}} <a href="{{repos.html_url}}" target="black" class="btn btn-sm btn-warning">View this project on Github</a>
+                    {{repos.description}} </p>
+                
                 </div> 
                 
             </div>
