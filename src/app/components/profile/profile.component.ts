@@ -2,6 +2,7 @@ import { ProfileService } from './../../services/profile.service';
 
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'gg-profile',
   templateUrl: './profile.component.html',

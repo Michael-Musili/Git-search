@@ -27,7 +27,7 @@
                         <span class="label label-default">Followers: {{profile.followers}} </span>
                         <span class="label label-primary">Following: {{profile.following}}</span>
                         <span class="label label-success"> public_gists: {{profile.public_gists}}</span> 
-                        <span class="label label-info">{{profile.repos}} repos</span>
+                        <span class="label label-info">{{profile.repository}} repos</span>
                     </p>
                 </div>
                <a><a href="{{profile.html_url}}" target="blank" class="btn btn-success bt-sm">View profile on Github</a></a>
@@ -36,8 +36,8 @@
                     <h3 class="panel-tittle">Repos</h3>
                 </div>
                 <div class="panel-body" >
-                    <p *ngIf="repos"> {{repos.name}} <a href="{{repos.html_url}}" target="black" class="btn btn-sm btn-warning">View this project on Github</a>
-                    {{repos.description}} </p>
+                    <p *ngFor="let repo of repos"> {{repo.name}} <a href="{{repo.html_url}}" target="black" class="btn btn-sm btn-warning">View this project on Github</a>
+                    {{repo.description}} </p>
                 
                 </div> 
                 
