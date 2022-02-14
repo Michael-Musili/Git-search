@@ -4,7 +4,7 @@ import { ProfileService  } from './services/profile.service'
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -19,7 +19,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    FormsModule
+  
 
   ],
   providers: [ProfileService ],

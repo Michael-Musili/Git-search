@@ -1,0 +1,11 @@
+body, html {
+    height: 100%;
+  }
+
+.body{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5be156f4365f02418a904b89/1551821384336-HVJMQ6H5Z5VZ60WF8Z58/mindset+not+a+location.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
