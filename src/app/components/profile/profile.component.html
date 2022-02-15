@@ -1,17 +1,19 @@
-
-<form action="" class="search-form" >
-    <div class="form-group">
+<div>
+    <form action="" class="search-form" >
+    
+        <div class="form-group">
         <input type="text" class="form-control" placeholder="Search users by Name" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+    
     </div>
 </form>
 
 
-<div *ngIf="profile">
-    <div class=" panel panel-defalt">
-        <div class="panel-heading">
-            {{profile.name}} <small>({{profile.login}})</small>
-            <span *ngIf="profile.company">,Works at {{profile.company}}</span>
-            {{profile.location}}
+<div *ngIf="profile" >
+    <div class=" panel panel-defalt container">
+        <div class="panel-heading jumbotron">
+           <h1> {{profile.name}} <small>({{profile.login}})</small> </h1><br>
+            <h2><span *ngIf="profile.company" class="">Works at {{profile.company}}</span></h2> <br>
+            <h2>{{profile.location}}</h2>
 
         </div>
 
@@ -24,12 +26,13 @@
             <div class="col-sm-5">
                 <ul class="list-group">
                     <li class="list-group-items"  >{{profile.bio}}</li>
-                    <li class="list-group-items">Currently works at {{profile.company}}</li>
-                    <li class="list-group-items">Location:{{profile.location}}</li>
+                    <li class="list-group-items">Currently works at {{profile.company}}</li> 
+                    <li class="list-group-items">Location:{{profile.location}}</li> 
                    
                 </ul>
             </div>
-            <div class="col-sm-4">
+            <br> <br> <br>
+            <div class="col-sm-4, rps">
                 <div>
                     <p>
                         <span class="label label-default">Followers: {{profile.followers}} </span>
@@ -39,22 +42,23 @@
                     </p>
                 </div>
                <a><a href="{{profile.html_url}}" target="blank" class="btn btn-success bt-sm">View profile on Github</a></a>
-               <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-tittle">Repos</h3>
+               <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading card-body">
+                      <h3 class="panel-tittle card-title">Repos</h3>
+                    </div>
+                
+                
+                    <div class="panel-body repos" *ngFor="let repo of repos">
+                      <p class="clear-fix" style="color: black;font-size: 25px;font-weight: 500;font-style: italic;"> {{repo.name}} <br>  <a href="{{repo.html_url}}" target="black" class="btn btn-sm btn-warning pull-right" >View this project on Github</a></p>
+                      <p class="p card-text"> {{repo.description}}</p>
+                    </div> 
                 </div>
-                <div class="panel-body" *ngFor="let repo of repos">
-                    <p class="clear-fix"> {{repo.name}}  <a href="{{repo.html_url}}" target="black" class="btn btn-sm btn-warning pull-right" >View this project on Github</a></p>
-                    <p> {{repo.description}}</p>
-                    
-                    
-                
-                </div> 
-                
-            </div>
             
             </div>
         </div>
     </div>
+
+</div>
 
 </div>
